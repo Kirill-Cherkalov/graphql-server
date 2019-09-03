@@ -1,0 +1,8 @@
+type Query {
+  myData: Data
+  hello: String!
+}
+
+type Data {
+    field: String
+}
