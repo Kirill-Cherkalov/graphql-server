@@ -1,12 +1,10 @@
 const { GraphQLModule } = require('@graphql-modules/core');
 const merge = require('lodash.merge');
 
-const UserSchema = require('./User/schema');
-const UserResolvers = require('./User/resolvers');
+const { UserSchema, UserResolvers, UserProvider } = require('./User');
 
 const BookSchema = require('./Book/schema');
 const BookResolvers = require('./Book/resolvers');
-const UserProvider = require('./User/provider.ts');
 
 const graphQlModule = new GraphQLModule({
   typeDefs: [UserSchema, BookSchema],

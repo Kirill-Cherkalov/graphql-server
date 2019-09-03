@@ -7,7 +7,7 @@
     "node": ">=10.1.0"
   },
   "scripts": {
-    "start": "nodemon --watch src/**/* -e ts,tsx --exec ts-node ./app/index.js",
+    "start": "nodemon --watch src/**/* -e ts,tsx --exec ts-node ./app/app.js",
     "lint": "node_modules/.bin/eslint ./app/**/*.js"
   },
   "dependencies": {
