@@ -1,15 +1,22 @@
-
 const { gql } = require('apollo-server-koa');
 
-const userSchema = gql`
-  type Query {
-    user(id: ID!): User
-  }
-
+const schema = gql`
   type User {
     id: ID!
-    username: String!
+    name: String!
+    email: String!
+    links: [Link!]!
+  }
+
+  type AuthPayload {
+    token: String
+    user: User
+  }
+
+  extend type Mutation {
+    signup(email: String!, password: String!, name: String!): AuthPayload
+    login(email: String!, password: String!): AuthPayload
   }
 `;
 
-module.exports = userSchema;
+module.exports = schema;
