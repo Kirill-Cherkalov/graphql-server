@@ -3,16 +3,19 @@ const MutationSchema = require('./modules/Mutation/schema');
 const LinkSchema = require('./modules/Link/schema');
 const UserSchema = require('./modules/User/schema');
 
-const Query = require('./modules/Query/resolvers');
-const Mutation = require('./modules/Mutation/resolvers');
-const User = require('./modules/User/resolvers');
-const Link = require('./modules/Link/resolvers');
+const User = require('./modules/User');
+const Link = require('./modules/Link');
 
 const resolvers = {
-  Query,
-  Mutation,
-  User,
-  Link,
+  Query: {
+    ...Link.queries,
+  },
+  Mutation: {
+    ...User.mutators,
+    ...Link.mutators,
+  },
+  User: User.resolvers,
+  Link: Link.resolvers,
 };
 
 const typeDefs = [QuerySchema, MutationSchema, LinkSchema, UserSchema];
