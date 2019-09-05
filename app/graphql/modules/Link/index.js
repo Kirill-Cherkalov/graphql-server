@@ -1,9 +1,7 @@
-const resolvers = require('./resolvers');
-const mutators = require('./mutators');
-const queries = require('./queries');
+function postedBy(parent, args, context) {
+  return context.prisma.link({ id: parent.id }).postedBy();
+}
 
 module.exports = {
-  mutators,
-  resolvers,
-  queries,
+  postedBy,
 };

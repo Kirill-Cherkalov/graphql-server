@@ -1,7 +1,7 @@
-const resolvers = require('./resolvers');
-const mutators = require('./mutators');
+function links(parent, args, context) {
+  return context.prisma.user({ id: parent.id }).links();
+}
 
 module.exports = {
-  mutators,
-  resolvers,
+  links,
 };

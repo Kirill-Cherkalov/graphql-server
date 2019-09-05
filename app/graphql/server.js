@@ -3,13 +3,13 @@ const { importSchema } = require('graphql-import');
 
 const { prisma } = require('../../prisma/generated/prisma-client');
 
-// const { typeDefs, resolvers } = require('./modules/index');
+const { typeDefs, resolvers } = require('./modules/index');
 
-const resolvers = require('./withoutModules');
+// const resolvers = require('./withoutModules');
 
 const server = new ApolloServer({
-  typeDefs: importSchema('./app/graphql/withoutModules/schema.graphql'),
-  // typeDefs,
+  // typeDefs: importSchema('./app/graphql/withoutModules/schema.graphql'),
+  typeDefs,
   resolvers,
   context: ({ ctx }) => ({
     prisma,
