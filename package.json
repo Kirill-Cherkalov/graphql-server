@@ -8,6 +8,18 @@
     "lint": "node_modules/.bin/eslint ./app/**/*.js",
     "prisma": "prisma"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "ignore": [],
+    "linters": {
+      "./app/**/*.js": "eslint"
+    },
+    "relative": true
+  },
   "dependencies": {
     "apollo-server-koa": "^2.9.3",
     "bcryptjs": "^2.4.3",
