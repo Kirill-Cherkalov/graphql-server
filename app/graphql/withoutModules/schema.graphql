@@ -1,5 +1,6 @@
 type Query {
   feed: [Link!]!
+  hello: String!
 }
 
 type Mutation {
@@ -11,6 +12,10 @@ type Mutation {
 type AuthPayload {
   token: String
   user: User
+}
+
+type Subscription {
+  newLink: Link
 }
 
 type User {
