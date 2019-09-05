@@ -1,5 +1,5 @@
 const { ApolloServer } = require('apollo-server-koa');
-const { importSchema } = require('graphql-import');
+// const { importSchema } = require('graphql-import');
 
 const { prisma } = require('../../prisma/generated/prisma-client');
 
