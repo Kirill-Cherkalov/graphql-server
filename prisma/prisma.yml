@@ -3,8 +3,13 @@
 endpoint: https://eu1.prisma.sh/kirill-2be144/graphql-server/dev
 
 
-# Points to the file that contains your datamodel
-datamodel: datamodel.prisma
+# Points to the files that contains your datamodel
+datamodel:
+  - './types/user.prisma'
+  - './types/link.prisma'
+
+# If there is only a single file that defines the datamodel, it can be specified as follows:
+# datamodel: datamodel.prisma
 
 # Specifies language & location for the generated Prisma client
 generate:

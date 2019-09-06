@@ -887,11 +887,11 @@ export type Boolean = boolean;
 
 export const models: Model[] = [
   {
-    name: "Link",
+    name: "User",
     embedded: false
   },
   {
-    name: "User",
+    name: "Link",
     embedded: false
   }
 ];
