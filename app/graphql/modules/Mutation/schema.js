@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-koa');
+const { gql } = require('apollo-server');
 
 const schema = gql`
   type Mutation {

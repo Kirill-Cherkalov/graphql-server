@@ -1,8 +1,7 @@
-const { ApolloServer } = require('apollo-server-koa');
+const { ApolloServer } = require('apollo-server');
 // const { importSchema } = require('graphql-import');
 
 const { prisma } = require('../../prisma/generated/prisma-client');
-
 const { typeDefs, resolvers } = require('./modules/index');
 
 // const resolvers = require('./withoutModules');
@@ -16,7 +15,10 @@ const server = new ApolloServer({
     ...ctx,
   }),
   subscriptions: {
-    path: '/',
+    path: '/subscriptions',
+  },
+  engine: {
+    apiKey: process.env.ENGINE_API_KEY,
   },
 });
 
